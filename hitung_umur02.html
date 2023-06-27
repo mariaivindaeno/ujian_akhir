@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menghitung Umur</title>
+  <script>
+    function hitungUmur() {
+      // Mendapatkan nilai input dari pengguna
+      var nama = document.getElementById("nama").value;
+      var tanggalLahir = document.getElementById("tanggalLahir").value;
+      
+      // Mendapatkan tanggal saat ini
+      var tanggalSekarang = new Date();
+      
+      // Menghitung selisih tahun
+      var selisihTahun = tanggalSekarang.getFullYear() - new Date(tanggalLahir).getFullYear();
+      
+      // Memperbarui elemen dengan hasil umur
+      document.getElementById("hasilUmur").innerHTML = "Halo, " + nama + "! Umur Anda adalah " + selisihTahun + " tahun.";
+    }
+  </script>
+</head>
+<body>
+  <h1>Menghitung Umur</h1>
+  
+  <label for="nama">Nama:</label>
+  <input type="text" id="nama">
+  
+  <label for="tanggalLahir">Tanggal lahir:</label>
+  <input type="date" id="tanggalLahir">
+  
+  <button onclick="hitungUmur()">Hitung</button>
+  
+  <p id="hasilUmur"></p>
+</body>
+</html>
